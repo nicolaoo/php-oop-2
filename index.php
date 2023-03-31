@@ -1,3 +1,15 @@
+<?php
+
+    require_once __DIR__."\model\prodotti.php";
+    require_once __DIR__."\model\categorie.php";
+
+    $prodotto1 = new prodotti("cotone", 15, true);
+    var_dump($prodotto1);
+    
+
+    $categoria1 = new categorie( "labrador", "lettiera", "acquario", "laghetto" );
+    var_dump($categoria1);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
