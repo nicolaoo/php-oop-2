@@ -14,7 +14,7 @@ class cani extends categorie{
     public $medicinali;
 
     public function __construct($_cibo, $_giochi, $_guinzaglieria, $_ciotole, $_medicinali){
-        parent:: __construct("labrador", "lettiera", "acquario", "laghetto" );
+        parent:: __construct("cani", "gatti", "pesci" );
         $this->cibo = $_cibo;
         $this->giochi = $_giochi;
         $this->guinzaglieria = $_guinzaglieria;
