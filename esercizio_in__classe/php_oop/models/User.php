@@ -1,7 +1,10 @@
 <?php
 require_once __DIR__ . "/Address.php";
+require_once __DIR__ . "/../traits/Validator.php";
 
 class User {
+  use Validator;
+
   /*
   prima del nome dell'attributo vado ad indicare 
   la tipologia che il valore dovrà avere.
@@ -27,7 +30,7 @@ class User {
    * richiedo obbligatoriamente che vengano comunicati
    * tramite argomenti, il nome ed il cognome dell'utente.
    */
-  function __construct($_firstName, $_lastName, Address $_address) {
+  function __construct($_firstName, $_lastName, Address $_address, $birthYear = null, $attack = 100) {
     // $this rappresenta l'istanza della classe appena creata
 
     // salvo i dati ricevuti come argomenti del costruttore,
@@ -44,7 +47,7 @@ class User {
   function getAge() {
     // controllo se ho l'anno di nascita dell'utente
     // se non ho l'anno di nascita, è inutile che vado avanti.
-    if(!isset($this->birthYear)){
+    if (!isset($this->birthYear)) {
       return "Anno di nascita mancante";
     }
 
@@ -56,5 +59,49 @@ class User {
 
   function getFullName() {
     return $this->firstName . " " . $this->lastName;
+  }
+
+  /**
+   * Get the value of firstName
+   */
+  public function getFirstName() {
+    return $this->firstName;
+  }
+
+  /**
+   * Set the value of firstName
+   *
+   * @return  self
+   */
+  public function setFirstName($firstName) {
+    if(!$this->testString($firstName, 2, 100)){
+      return;
+    }
+
+    $this->firstName = $firstName;
+
+    return $this;
+  }
+
+  /**
+   * Get the value of lastName
+   */
+  public function getLastName() {
+    return $this->lastName;
+  }
+
+  /**
+   * Set the value of lastName
+   *
+   * @return  self
+   */
+  public function setLastName($lastName) {
+    if(!$this->testString($lastName, 2, 100)){
+      return;
+    }
+
+    $this->lastName = $lastName;
+
+    return $this;
   }
 }

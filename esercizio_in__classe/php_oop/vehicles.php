@@ -51,6 +51,37 @@ $barche = [
 ];
 
 
+$prodotti = array_merge($veicoli, $auto, $barche);
+
+var_dump($prodotti);
+
+foreach ($prodotti as $prodotto) {
+  var_dump(get_class($prodotto));
+
+
+  if (get_class($prodotto) === "Vehicle") {
+  } else if (get_class($prodotto) === "Car") {
+  } else if (get_class($prodotto) === "Boat") {
+  }
+
+  switch (get_class($prodotto)) {
+    case "Vehicle":
+
+      break;
+    case "Car":
+
+      break;
+    case "Boat":
+
+      break;
+    default:
+      
+      break;
+  }
+}
+
+die();
+
 // var_dump($veicoli, $auto, $barche);
 
 ?>

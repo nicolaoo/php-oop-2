@@ -1,7 +1,10 @@
 <?php
 require_once __DIR__ . "/Vehicle.php";
+require_once __DIR__ . "/../traits/Position.php";
 
 class Boat extends Vehicle {
+  use Position;
+
   public $brand;
   public $model;
   public $name;
