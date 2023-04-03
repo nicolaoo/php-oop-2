@@ -2,9 +2,6 @@
 
     require_once __DIR__."\model\prodotti.php";
     require_once __DIR__."\model\categorie.php";
-    require_once __DIR__."\model\cani.php";
-    require_once __DIR__."\model\pesci.php";
-    require_once __DIR__."\model\gatti.php";
 
 
     $categoria1 = new categorie( "cani", "", "" );
@@ -12,52 +9,6 @@
     $categoria3 = new categorie( "", "", "pesci" );
 
     var_dump($categoria1);
-
-    $animale1 = new cani ("crocchette, snack", 
-    "palle, tira e molla", 
-    "guinzagli, collari, pettorine", 
-    "dispnser, ciotole", 
-    "antizecche, integratori" );
-
-    
-    $animale2 = new gatti ("mangime", 
-    "luce gialla, luce bianca", 
-    "guinzagli, collari, pettorine", 
-    "dispnser, ciotole", 
-    "antizecche, integratori" );
-
-    
-    $animale3 = new pesci ("crocchette, snack", 
-    "palle, tiragraffi", 
-    "ph 4.0", 
-    "sabbia, ghiaia, alghe, sassi" );
-
-    
-
-
-    $prodotti1= [
-        new prodotti("cotone", "18", true),
-        $categoria1,
-        $animale1
-    ];
-
-    $prodotti2= [
-        new prodotti("seta", "94", true),
-        $categoria2,
-        $animale2
-    ];
-
-    $prodotti3 = [
-        new prodotti("acquario", "25", true),
-        $categoria3,
-        $animale3
-   
-    ];
-    
-    
-    var_dump($prodotti1);
-    var_dump($prodotti2);
-    var_dump($prodotti3);
 ?>
 
 <!DOCTYPE html>
@@ -75,25 +26,7 @@
     <section>
         <div class="container">
             <div class="grid">
-                <?php foreach($prodotti1 as $prodotto ) :
-                    
-                    ?>
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Card title:
-                                <?php echo $prodotto->cani ?>
-                            </h5>
-                            <p class="card-text">
-                            <?php echo $prodotto->categorie ?>
-                            </p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                    <?php
-                endforeach ?>
-                
+        
             </div>
         </div>
     </section>

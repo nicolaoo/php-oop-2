@@ -1,9 +1,6 @@
 <?php
 
-require_once __DIR__."\gatti.php";
-require_once __DIR__."\pesci.php";
-require_once __DIR__."\cani.php";
-
+require_once __DIR__. "\prodotti.php";
 
 class categorie extends prodotti {
     public $cani;
