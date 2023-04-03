@@ -3,7 +3,7 @@
 require_once __DIR__ . "\model\prodotti.php";
 
 
-$prodotto = new categorie("cani", "gatti", "pesci", "lana", 15.8, true);
+$prodotto = new categorie("cani", "gatti", "pesci", "lana", 5.8, true);
 
 
 var_dump($prodotto);
@@ -25,7 +25,12 @@ var_dump($prodotto);
     <section>
         <div class="container">
             <div class="grid">
-
+                <div class="card">
+                    <?php
+                    foreach ($prodotto as $product) :
+                        echo $product;
+                    endforeach ?>
+                </div>
             </div>
         </div>
     </section>

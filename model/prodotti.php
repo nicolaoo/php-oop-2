@@ -36,6 +36,11 @@ class prodotti
 
     function setPrezzo(float $prezzo)
     {
+        if ($prezzo < 0) {
+            throw new Exception("inserisci un numero maggiore di zero");
+        } elseif ($prezzo > 50) {
+            throw new Exception("inserisci un umero minore di 50");
+        }
         $this->prezzo = $prezzo;
 
         return $this;
