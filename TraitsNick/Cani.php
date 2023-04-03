@@ -71,4 +71,14 @@ trait cani
 
         return $this;
     }
+
+    function printDescrizione()
+    {
+        echo "
+            <p class=\"card-text\">{$this->getCrochette()}</p>
+            <p class=\"card-text\">{$this->getMedicinale()}</p>
+            <p class=\"card-text\">{$this->getGuinzaglio()}</p>
+            <p class=\"card-text\">{$this->getCiotole_cibo()}</p>
+    ";
+    }
 }

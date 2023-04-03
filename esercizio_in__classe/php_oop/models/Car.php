@@ -2,7 +2,8 @@
 
 require_once __DIR__ . "/Vehicle.php";
 
-class Car extends Vehicle {
+class Car extends Vehicle
+{
   public $brand;
   public $model;
 
@@ -12,7 +13,8 @@ class Car extends Vehicle {
   // cavalli
   public $hp;
 
-  function __construct($_brand, $_model, $_price, $_cc) {
+  function __construct($_brand, $_model, $_price, $_cc)
+  {
     // invoco il costruttore della classe padre, per evitare di dover
     // scrivere le stesse cose all'interno di questo costruttore
     parent::__construct("cars", $_price, true);
@@ -41,7 +43,8 @@ class Car extends Vehicle {
   // Per ogi attributo della nostra classe, dovremmo avere un setter dedicato.
   // Il nome della funzione dovrebbe iniziare con "set" 
   // e poi continuare con il nome dell'attributo.
-  public function setCilindrata($nuovoValore) {
+  public function setCilindrata($nuovoValore)
+  {
     if ($nuovoValore < 1000 || $nuovoValore > 10000) {
       return;
     }
@@ -49,7 +52,8 @@ class Car extends Vehicle {
     $this->cc = $nuovoValore;
   }
 
-  public function printCardHTML() {
+  public function printCardHTML()
+  {
     $title = $this->brand . " - " . $this->model;
 
 
@@ -73,7 +77,7 @@ class Car extends Vehicle {
 
   /**
    * Get the value of brand
-   */ 
+   */
   public function getBrand()
   {
     return $this->brand;
@@ -83,7 +87,7 @@ class Car extends Vehicle {
    * Set the value of brand
    *
    * @return  self
-   */ 
+   */
   public function setBrand($brand)
   {
     $this->brand = $brand;
@@ -93,7 +97,7 @@ class Car extends Vehicle {
 
   /**
    * Get the value of model
-   */ 
+   */
   public function getModel()
   {
     return $this->model;
@@ -103,7 +107,7 @@ class Car extends Vehicle {
    * Set the value of model
    *
    * @return  self
-   */ 
+   */
   public function setModel($model)
   {
     $this->model = $model;

@@ -11,9 +11,8 @@ class categorie extends prodotti
     public string $gatti;
     public string $pesci;
 
-    public function __construct($_cani, $_gatti, $_pesci, $_materiale, $_prezzo, $_disponibilità)
+    public function __construct($_cani, $_gatti, $_pesci)
     {
-        parent::__construct($_materiale, $_prezzo, $_disponibilità);
         $this->setCani($_cani);
         $this->setGatti($_gatti);
         $this->setPesci($_pesci);
