@@ -3,12 +3,10 @@
     require_once __DIR__."\model\prodotti.php";
     require_once __DIR__."\model\categorie.php";
 
+    $prodotto = new categorie("cani", "gatti", "pesci","lana", 15.8 , true);
 
-    $categoria1 = new categorie( "cani", "", "" );
-    $categoria2 = new categorie( "", "gatti", "" );
-    $categoria3 = new categorie( "", "", "pesci" );
 
-    var_dump($categoria1);
+    var_dump($prodotto);
 ?>
 
 <!DOCTYPE html>
